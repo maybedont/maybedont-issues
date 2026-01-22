@@ -1,0 +1,70 @@
+name: Website Issue
+description: Report a bug or content issue with the website
+title: "[Website]: "
+labels: ["website"]
+body:
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      description: What kind of issue are you reporting?
+      options:
+        - Bug (something is broken)
+        - Content (typo, outdated info, broken link)
+        - Visual/UI (styling or layout problem)
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: page-url
+    attributes:
+      label: Page URL
+      description: What page is affected?
+      placeholder: https://example.com/page
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the issue in detail
+      placeholder: What's wrong and what did you expect?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: If this is a bug, how can we reproduce it?
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. See error
+    validations:
+      required: false
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      description: What browser were you using? (if applicable)
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Other
+        - N/A
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Add any screenshots that help illustrate the issue
+    validations:
+      required: false
